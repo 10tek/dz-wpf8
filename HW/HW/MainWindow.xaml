@@ -1,0 +1,67 @@
+﻿<Window x:Class="HW.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HW"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="1200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="180*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="60*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Список игр:" VerticalAlignment="Bottom" Height="26"></Label>
+        <Label x:Name="chooseGame" Content="Выберите игру" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="50"></Label>
+        <Label Content="Описание игры:" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="30"></Label>
+        <StackPanel Grid.Row="2">
+            <Button x:Name="dota2Btn" Width="80" Height="80" Click="Dota2BtnClick">
+                <StackPanel>
+                    <Image Source="images/icons/dota2.jpg"></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="dota2B" Content="Dota 2" Click="Dota2BClick"></Button>
+            <Button x:Name="w3Btn" Width="100" Height="70" Margin="0,10,0,0" Click="W3BtnClick">
+                <StackPanel>
+                    <Image Source="images/icons/w3tft.jpg"></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="w3B" Content="Warcraft III TFT" Click="W3BClick"></Button>
+            <Button x:Name="nfsBtn" Width="80" Height="80" Margin="0,10,0,0" Click="NfsBtnClick">
+                <StackPanel>
+                    <Image Source="images/icons/nfs_mw.jpg"></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="nfsB" Content="NFS Most Wanted" Click="NfsBClick"></Button>
+        </StackPanel>
+        
+        <Image x:Name="gameImage" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1"></Image>
+        <Button x:Name="nextBtn" VerticalAlignment="Bottom" Click="NextBtnClick" Content="+" FontSize="40" Grid.Column="3" Grid.Row="1" Opacity="0"></Button>
+        <Button x:Name="preBtn" VerticalAlignment="Bottom" Click="PreBtnClick" Content="-" FontSize="40" Grid.Column="1" Grid.Row="1" Opacity="0"></Button>
+        <TextBlock x:Name="paginationTB" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"></TextBlock>
+        
+        <StackPanel x:Name="contentSP" Grid.Row="1" Grid.Column="4" Opacity="0">
+            <TextBlock x:Name="name" Text="Имя:" FontSize="20"></TextBlock>
+            <TextBlock x:Name="genre" Text="Жанр:" FontSize="20"></TextBlock>
+            <TextBlock x:Name="date" Text="Дата выхода:" FontSize="20"></TextBlock>
+            <TextBlock x:Name="price" Text="Цена:" FontSize="20"></TextBlock>
+            <TextBlock x:Name="description" Text="Описание:" FontSize="20"></TextBlock>
+        </StackPanel>
+        <StackPanel x:Name="contentInfoSP" Grid.Row="1" Grid.Column="5" Opacity="0">
+            <TextBlock x:Name="nameInfo" FontSize="20"/>
+            <TextBlock x:Name="genreInfo" FontSize="20"/>
+            <TextBlock x:Name="dateInfo" FontSize="20"/>
+            <TextBlock x:Name="priceInfo" FontSize="20"/>
+            <TextBlock x:Name="descriptionInfo" TextWrapping="Wrap" FontSize="20"/>
+        </StackPanel>
+        <Button x:Name="closeBtn" Grid.Column="5" Grid.Row="1" Content="x" Width="20" VerticalAlignment="Top" HorizontalAlignment="Right" Opacity="0" Click="CloseBtnClick"></Button>
+    </Grid>
+</Window>
